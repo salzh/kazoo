@@ -160,7 +160,15 @@
                             <input type="text" name="extra.flags" value="${data.flags.toString()}" rel="popover" data-content="${_t('flags_help')}"/>
                         </div>
                     </div>
+										
+										 <div class="clearfix">
+                        <label for="gateways_accountcode">Accountcode</label>
+                        <div class="input">
+                            <input type="text" name="gateways[0].accountcode" id="gateways_accountcode" value="${data.gateways[0].accountcode}" rel="popover" data-content="accountcode used by velantro a2b system"/>
+                        </div>
+                    </div>
 
+                    
                     <div class="clearfix">
                         <div class="input">
                             <ul class="inputs-list">
