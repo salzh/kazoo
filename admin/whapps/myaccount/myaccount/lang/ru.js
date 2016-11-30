@@ -1,0 +1,1 @@
+window.translate.myaccount=$.extend(!0,{},window.translate.myaccount,{});

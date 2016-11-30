@@ -1,0 +1,38 @@
+<div>
+    <div class="dialog_popup">
+        <h1>${_t('manual_presence')}</h1>
+        <form name="form" method="post" action="#">
+            <div class="form_content">
+                <div class="popup_field">
+                    <label for="presence_id_input">${_t('ID')} </label>
+                    <input type="text" id="presence_id_input" class="medium" value="${data_presence.presence_id}"/>
+                </div>
+                <div class="popup_field">
+                    <label for="presence_status">${_t('status')}: </label>
+                    <select id="presence_status" style="width: 100px; height: 28px;">
+                        {{if data_presence.status == 'idle'}}
+                            <option value="idle" selected="selected">${_t('idle')}</option>
+                        {{else}}
+                            <option value="idle">${_t('idle')}</option>
+                        {{/if}}
+
+                        {{if data_presence.status == 'ringing'}}
+                            <option value="ringing" selected="selected">${_t('ringing')}</option>
+                        {{else}}
+                            <option value="ringing">${_t('ringing')}</option>
+                        {{/if}}
+
+                        {{if data_presence.status == 'busy'}}
+                            <option value="busy" selected="selected">${_t('busy')}</option>
+                        {{else}}
+                            <option value="busy">${_t('busy')}</option>
+                        {{/if}}
+                    </select>
+                </div>
+            </div>
+        </form>
+        <div class="buttons-center">
+            <button id="add" class="btn primary">OK</button>
+        </div>
+    </div>
+</div>

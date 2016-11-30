@@ -1,0 +1,239 @@
+<div>
+	<div class="row">
+		<div class="whapp-header">
+			{{if data.id}}
+                <h1>${_t('edit_voicemail_box')}</h1>
+            {{else}}
+                <h1>${_t('create_voicemail_box')}</h1>
+            {{/if}}
+			<div class="buttons-right pasted view-buttons">
+				<button class="btn black basic activate">${_t('basic')}</button>
+				<button class="btn black advanced">${_t('advanced')}</button>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<ul class="tabs" data-tabs="tabs">
+		 	<li class="active"><a href="#basic">${_t('basic')}</a></li>
+		 	<li><a href="#options"><span class="icon wrench_screw"></span>${_t('options')}</a></li>
+		</ul>
+		 <form id="vmbox-form" action="" method="post">
+		 	<div class="pill-content">
+				<div class="active basic_view" id="basic">
+					<div class="clearfix">
+						<label for="name">${_t('name')}</label>
+						<div class="input">
+							<input class="span4" id="name" name="name" type="text" placeholder="${_t('name_placeholder')}" value="${data.name}" rel="popover" data-content="${_t('name_data_content')}"/>
+						</div>
+					</div>
+
+					<div class="clearfix">
+						<label for="mailbox">${_t('voicemail_number')}</label>
+						<div class="input">
+							<input class="span4" id="mailbox" name="mailbox" type="text" placeholder="${_t('voicemail_number_placeholder')}" value="${data.mailbox}" rel="popover" data-content="${_t('voicemail_number_data_content')}"/>
+						</div>
+					</div>
+
+					<div class="clearfix">
+						<label for="owner_id">${_t('assign_to')}</label>
+						<div class="input">
+							<span rel="popover" data-content="${_t('assign_to_data_content')}">
+								<select name="owner_id" id="owner_id" class="medium" >
+									{{each field_data.users}}
+	                                    {{if data.owner_id == id}}
+	                                        <option value="${id}" id="${id}" selected="selected">${first_name} ${last_name}</option>
+	                                    {{else}}
+	                                        <option value="${id}" id="${id}">${first_name} ${last_name}</option>
+	                                    {{/if}}
+	                                {{/each}}
+								</select>
+								<div class="edit_create">
+	                            	<a id="edit_link"  class="inline_action" data-action="edit" href="#">${_t('edit')}</a>
+	                                <a class="inline_action" data-action="create" href="#">${_t('create')}</a>
+								</div>
+							</span>
+						</div>
+					</div>
+
+					<div class="clearfix">
+						<label for="pin">${_t('pin_number')}</label>
+						<div class="input">
+							<input class="span4" id="pin" name="pin" type="text" placeholder="PIN" value="${data.pin}" rel="popover" data-content="${_t('pin_number_data_content')}"/>
+						</div>
+					</div>
+
+					<div class="clearfix">
+						<label for="media_unavailable">${_t('unavailable_message')}</label>
+						<div class="input">
+							<span rel="popover" data-content="${_t('unavailable_message_data_content')}">
+								<select name="media.unavailable" id="media_unavailable" class="medium" >
+									{{each field_data.media}}
+	                                    {{if data.media.unavailable == id}}
+	                                        <option value="${id}" id="${id}" selected="selected">${name}</option>
+	                                    {{else}}
+	                                        <option value="${id}" id="${id}">${name}</option>
+	                                    {{/if}}
+	                                {{/each}}
+								</select>
+								<div class="edit_create">
+	                            	<a id="edit_link_media"  class="inline_action_media" data-action="edit" href="#">${_t('edit')}</a>
+	                                <a class="inline_action_media" data-action="create" href="#">${_t('create')}</a>
+								</div>
+							</span>
+						</div>
+					</div>
+				</div>
+
+				<div id="options">
+					<div class="clearfix">
+						<label for="timezone">${_t('timezone')}</label>
+						<div class="input">
+							<select name="timezone" id="timezone">
+                            </select>
+						</div>
+					</div>
+
+					<div class="clearfix">
+						<div class="input">
+							<ul class="inputs-list">
+								<li>
+									<label>
+										<span rel="popover" data-content="${_t('already_setup_data_content')}">
+											{{if data.is_setup}}
+							                    <input type="checkbox" id="is_setup" name="is_setup" checked="checked" />
+							                {{else}}
+							                    <input type="checkbox" id="is_setup" name="is_setup"/>
+							                {{/if}}
+							                <span>${_t('already_setup')}</span>
+						                </span>
+						            </label>
+						        </li>
+						    </ul>
+						</div>
+					</div>
+
+					<div class="clearfix">
+						<div class="input">
+							<ul class="inputs-list">
+								<li>
+									<label>
+										<span rel="popover" data-content="${_t('require_pin_data_content')}">
+											{{if data.require_pin}}
+							                    <input type="checkbox" id="require_pin" name="require_pin" checked="checked" />
+							                {{else}}
+							                    <input type="checkbox" id="require_pin" name="require_pin" />
+							                {{/if}}
+							                <span>${_t('require_pin')}</span>
+						                </span>
+						            </label>
+						        </li>
+						    </ul>
+						</div>
+					</div>
+
+					<div class="clearfix">
+						<div class="input">
+							<ul class="inputs-list">
+								<li>
+									<label>
+										<span rel="popover" data-content="${_t('auto_login_enabled_data_content')}">
+											{{if data.check_if_owner}}
+							                    <input type="checkbox" id="check_if_owner" name="check_if_owner" checked="checked" />
+							                {{else}}
+							                    <input type="checkbox" id="check_if_owner" name="check_if_owner" />
+							                {{/if}}
+							                <span>${_t('auto_login_enabled')}</span>
+						                </span>
+						            </label>
+						        </li>
+						    </ul>
+						</div>
+					</div>
+
+					<div class="clearfix">
+						<div class="input">
+							<ul class="inputs-list">
+								<li>
+									<label>
+										<span rel="popover" data-content="${_t('skip_greeting_data_content')}">
+											{{if data.skip_greeting}}
+							                    <input type="checkbox" id="skip_greeting" name="skip_greeting" checked="checked" />
+							                {{else}}
+							                    <input type="checkbox" id="skip_greeting" name="skip_greeting"/>
+							                {{/if}}
+							                <span>${_t('skip_greeting')}</span>
+						                </span>
+						            </label>
+						        </li>
+						    </ul>
+						</div>
+					</div>
+
+					<div class="clearfix">
+						<div class="input">
+							<ul class="inputs-list">
+								<li>
+									<label>
+										<span rel="popover" data-content="${_t('skip_instructions_data_content')}">
+											{{if data.skip_instructions}}
+							                    <input type="checkbox" id="skip_instructions" name="skip_instructions" checked="checked" />
+							                {{else}}
+							                    <input type="checkbox" id="skip_instructions" name="skip_instructions"/>
+							                {{/if}}
+							                <span>${_t('skip_instructions')}</span>
+						                </span>
+						            </label>
+						        </li>
+						    </ul>
+						</div>
+					</div>
+
+                    <div class="clearfix">
+                        <div class="input">
+                            <ul class="inputs-list">
+                                <li>
+                                    <label>
+                                        <span rel="popover" data-content="${_t('delete_after_notification_data_content')}">
+                                            {{if data.delete_after_notify}}
+                                                <input type="checkbox" id="delete_after_notify" name="delete_after_notify" checked="checked" />
+                                            {{else}}
+                                                <input type="checkbox" id="delete_after_notify" name="delete_after_notify"/>
+                                            {{/if}}
+                                            <span>${_t('delete_after_notification')}</span>
+                                        </span>
+                                    </label>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="clearfix">
+                        <div class="input">
+                            <ul class="inputs-list">
+                                <li>
+                                    <label>
+                                        <span rel="popover" data-content="${_t('not_configurable_data_content')}">
+                                            {{if data.not_configurable}}
+                                                <input type="checkbox" id="not_configurable" name="extra.allow_configuration" />
+                                            {{else}}
+                                                <input type="checkbox" id="not_configurable" name="extra.allow_configuration" checked/>
+                                            {{/if}}
+                                            <span>${_t('not_configurable')}</span>
+                                        </span>
+                                    </label>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+				</div>
+			</div>
+		 </form>
+
+		 <div class="buttons-right">
+	        {{if data.id}}
+	            <button class="btn danger vmbox-delete">${_t('delete')}</button>
+	        {{/if}}
+            <button class="btn success vmbox-save">${_t('save')}</button>
+		</div>
+	</div>
+</div>

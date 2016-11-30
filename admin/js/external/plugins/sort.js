@@ -1,0 +1,1 @@
+jQuery.extend(jQuery.fn.dataTableExt.oSort,{"currency-asc":function(e,t){return parseFloat(e.substring(1))-parseFloat(t.substring(1))},"currency-desc":function(e,t){return parseFloat(t.substring(1))-parseFloat(e.substring(1))}});

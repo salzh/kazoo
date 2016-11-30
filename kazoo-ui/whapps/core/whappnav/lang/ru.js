@@ -1,0 +1,1 @@
+window.translate.whappnav=$.extend(!0,{},window.translate.whappnav,{});

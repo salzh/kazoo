@@ -1,0 +1,1 @@
+define(["require","jquery","monster"],function(e){var r=e("jquery"),n=e("monster"),u={requests:{},subscribe:{"voip.numbers.render":"numbersRender"},numbersRender:function(e){var u=e.parent||r("#ws_content"),s=e.callback;n.pub("common.numbers.render",{container:u,viewType:"pbx",callbackAfterRender:s})}};return u});

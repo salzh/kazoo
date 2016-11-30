@@ -1,0 +1,43 @@
+<div>
+    <div class="dialog_popup">
+        <h1>${_t('connect_caller_to_another_callflow')}</h1>
+        <form name="form" method="post" action="#">
+            <div class="form_content">
+                <div class="popup_field">
+                    <label for="object-selector">${_t('which_callflow')}</label>
+                    <div class="select_wrapper">
+                        <select id="object-selector">
+                            {{each(i,obj) objects.items}}
+                                {{if objects.selected == obj.id}}
+                                    <option value="${obj.id}" SELECTED>${obj.name}</option>
+                                {{else}}
+                                    <option value="${obj.id}">${obj.name}</option>
+                                {{/if}}
+                            {{/each}}
+                        </select>
+                        <div class="clear"/>
+                    </div>
+                </div>
+            </div>
+
+            <div class="parameter_div">
+                {{if route_var.length == 0}}
+                <input type="checkbox" id="toggle_advanced"> Advanced
+                <div id="route_var_div" style="display: none;">
+                    ${_t('route_var_ccv')}
+                    <input type="text" id="route_var" value="${route_var}"/>
+                </div>
+                {{else}}
+                <input type="checkbox" checked="checked" id="toggle_advanced"> Advanced
+                <div id="route_var_div">
+                    ${_t('route_var_ccv')}
+                    <input type="text" id="route_var" value="${route_var}"/>
+                </div>
+                {{/if}}
+            </div>
+        </form>
+        <div class="buttons-center">
+            <button id="add" class="btn primary">OK</button>
+        </div>
+    </div>
+</div>

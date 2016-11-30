@@ -1,0 +1,25 @@
+<div>
+    <div id="ws_callflow">
+        <div id="callflow_header">
+            <div id="pending_change">
+                <span>${_t('you_have_modified_this_callflow')}</span>
+            </div>
+        </div>
+        <div class="callflow">
+            <div>
+                <span class="flow">
+                    <div class="buttons"></div>
+                    <div id="${flow.substr(1)}"></div>
+                </span>
+            </div>
+        </div>
+        <div class="tools">
+            <div id="${tools.substr(1)}"></div>
+        </div>
+        <div class="callflow_helpbox_wrapper">
+            <div id="help_box" class="tip_box">
+            ${_t('drag_items_below_on_top')}
+            </div>
+        </div>
+    </div>
+</div>

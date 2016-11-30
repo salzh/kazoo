@@ -1,0 +1,28 @@
+<div>
+    <div class="dialog_popup">
+        <h1>${_t('select_the_device')}</h1>
+        <form name="form" method="post" action="#">
+            <div class="form_content">
+                <div class="popup_field">
+                    <label for="object-selector">${_t('which_device')}</label>
+                    <div class="select_wrapper">
+                        <select id="object-selector">
+                            {{each(i,obj) objects.items}}
+                                {{if objects.selected == obj.id}}
+                                    <option value="${obj.id}" SELECTED>${obj.name}</option>
+                                {{else}}
+                                    <option value="${obj.id}">${obj.name}</option>
+                                {{/if}}
+                            {{/each}}
+                        </select>
+                        <div class="clear"/>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <div class="buttons-center">
+            <button id="ring" class="btn primary">${_t('ring')}</button>
+            <button id="cancel" class="btn danger">${_t('cancel')}</button>
+        </div>
+    </div>
+</div>

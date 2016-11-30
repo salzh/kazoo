@@ -1,0 +1,220 @@
+<div>
+    <div id="port_number" class="trunkstore_popup">
+        <div class="wizard_nav">
+            <div class="steps_image">
+                <div class="round_circle current">
+                    ${_t('step')} 1
+                </div>
+                <div class="round_circle">
+                    ${_t('step')} 2
+                </div>
+                <div class="round_circle">
+                    ${_t('step')} 3
+                </div>
+                <div class="round_circle">
+                    ${_t('step')} 4
+                </div>
+            </div>
+            <div class="steps_text">
+                <ul id="steps">
+                    <li id="step_title_1" class="step_title current">
+                        ${_t('porting_numbers')}
+                    </li>
+                    <li id="step_title_2" class="step_title">
+                        ${_t('current_service_info')}
+                    </li>
+                    <li id="step_title_3" class="step_title">
+                        ${_t('verification')}
+                    </li>
+                    <li id="step_title_4" class="step_title">
+                        ${_t('terms_conditions')}
+                    </li>
+                </ul>
+            </div>
+            <div class="clear"/>
+        </div>
+        <div class="wizard_content">
+            <form id="port">
+                <div class="step_div first">
+                    <div class="split_div">
+                        <div class="left_part text_only">
+                            ${_t('friendly_name')}
+                        </div>
+
+                        <div class="right_part">
+                            <input type="text" name="name" placeholder="${_t('friendly_name_placeholder')}">
+                        </div>
+                    </div>
+
+                    <div class="split_div">
+                        <div class="left_part">
+                            <span class="icon resource"/> ${_t('current_carrier')}
+                        </div>
+
+                        <div class="right_part">
+                            <select class="carrier_dropdown" name="carrier">
+                                <option value="empty">-- ${_t('select')} --</option>
+                                <option value="AT&T">AT&T</option>
+                                <option value="T-Mobile">T-Mobile</option>
+                                <option value="Verizon">Verizon</option>
+                                <option value="Sprint">Sprint</option>
+                                <option value="Other">${_t('other')}</option>
+                            </select>
+                            <input type="text" name="extra.other_carrier" class="other_carrier" placeholder="${_t('carriers_name')}"/>
+                        </div>
+                        <div class="clear"/>
+                    </div>
+
+                    <div class="split_div">
+                        <div class="left_part text_only">
+                            ${_t('main_number_to_port')}
+                        </div>
+
+                        <div class="right_part">
+                            <input type="text" name="main_number" class="main_number" placeholder="415-111-2222"/>
+                        </div>
+
+                        <div class="clear"/>
+                    </div>
+
+                    <div class="split_div last">
+                        <div class="left_part">
+                            ${_t('additional_numbers_to_port')}
+                            <div class="numbers_example">${_t('must_be_on_same_bill')}</div>
+                        </div>
+
+                        <div class="right_part">
+                            <textarea class="numbers_text" name="numbers" placeholder="${_t('one_number_per_line')}"></textarea>
+                        </div>
+                        <div class="clear"/>
+                    </div>
+
+                    <div class="fancy_help border">
+                        <div class="wrapper_icon"><span class="note_icon"/></div>
+                        <div class="help_text">${_t('all_numbers_should_be')}</div>
+                        <div class="clear"/>
+                    </div>
+                </div>
+
+                <div class="step_div second">
+                    <div class="title">
+                        <span class="icon receipt"/>${_t('please_tell_us_your_billing')}
+                    </div>
+
+                    <div class="split_div last">
+                        <div class="left_part">
+                            <div class="field"><label>${_t('name_on_account')}</label><input type="text" name="bill.name"/></div>
+                            <div class="field"><label>${_t('postal_code')}</label><input id="postal_code" type="text" name="bill.postal_code"/></div>
+                            <div class="field"><label>${_t('address')}</label><input type="text" name="bill.address"/></div>
+                            <div class="field"><label>${_t('ext_address')}</label><input type="text" name="bill.extended_address"/></div>
+                            <div class="field"><label>${_t('city')}</label><input id="locality" type="text" name="bill.locality"/></div>
+                            <div class="field"><label>${_t('state')}</label><input id="region" type="text" name="bill.region" /></div>
+                        </div>
+
+                        <div class="right_part">
+                            <div class="bill_image">
+                            </div>
+
+                            <div class="upload_bill">
+                                ${_t('upload_your_current_phone_bill')}
+                                <div class="file-upload-container">
+                                    <input type="file" name="files" class="files"/>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="clear"/>
+                    </div>
+
+                    <div class="fancy_help border">
+                        <div class="wrapper_icon"><span class="note_icon"/></div>
+                        <div class="help_text">${_t('to_process_your_order')}</div>
+                        <div class="clear"/>
+                    </div>
+                </div>
+
+                <div class="step_div third">
+                    <div class="title">
+                        <span class="icon receipt"/>${_t('please_submit_a_letter')}
+                    </div>
+
+                    <div class="loa_block">
+                        1. ${_t('download')} <a id="loa_link" href="http://2600hz.com/porting/2600hz_loa.pdf" target="_blank">${_t('loa_form')}</a> / <a id="resporg_link" href="http://2600hz.com/porting/2600hz_resporg.pdf" target="_blank">${_t('resporg_form')}</a>
+                        <div class="fancy_help">
+                            <div class="wrapper_icon"><span class="note_icon"/></div>
+                            <div class="help_text">
+                                ${_t('if_you_are_porting_a_regular_phone_number')}<br/>
+                                ${_t('if_you_are_porting_a_toll_free_number')}
+                            </div>
+                            <div class="clear"/>
+                        </div>
+                    </div>
+
+                    <div class="loa_block">
+                        2. ${_t('fill_out_the_information_and_sign_it')}
+                        <div class="fancy_help">
+                            <div class="wrapper_icon"><span class="note_icon"/></div>
+                            <div class="help_text">${_t('the_port_will_fail')}</div>
+                            <div class="clear"/>
+                        </div>
+                    </div>
+
+                    <div class="loa_block">
+                        3. ${_t('upload_it_here')}
+                        <div class="upload_block">
+                            ${_t('upload_signed_letter')}
+                            <div class="file-upload-container">
+                                <input name="loa" class="loa" type="file"/>
+                            </div>
+                        </div>
+                        <div class="fancy_help">
+                            <div class="wrapper_icon"><span class="note_icon"/></div>
+                            <div class="help_text">${_t('having_trouble_uploading')} ${company_name} ${_t('at')} ${support_email}</div>
+                            <div class="clear"/>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="step_div fourth">
+                    <div class="block">
+                        <div class="title"><span class="icon down_arrow_circle"/>&nbsp;${_t('please_confirm_the_following')}</div>
+                        <div class="checkbox_line"><input name="extra.cb.cost_porting" type="checkbox"/>${_t('i_understand_the_cost')} ${porting_price}${_t('by_number')}</div>
+                        <div class="checkbox_line"><input name="extra.cb.cancel" type="checkbox"/>${_t('i_will_not_cancel')}</div>
+                        <div class="checkbox_line"><input name="extra.cb.porting_length" type="checkbox"/>${_t('i_understand_the_porting_process')}</div>
+                        <div class="checkbox_line"><input name="extra.cb.termination_charge" type="checkbox"/>${_t('i_understand_my_old_carrier')}</div>
+                        <div class="checkbox_line"><input name="extra.cb.standard_numbers" type="checkbox"/>${_t('these_numbers_are_standard')} <a id="features_link" href="http://www.2600hz.com/features" target="_blank">${_t('features')}</a> (${_t('like_star_ring')})</div>
+                    </div>
+                    <div class="block">
+                        <div class="title"><span class="icon check_circle"/>&nbsp;${_t('terms_and_conditions')} <a id="terms_link" href="http://www.2600hz.com/html/privacy_policy.html" target="_blank">${_t('read_here')}</a></div>
+                        <div class="checkbox_line"><input name="extra.agreed" type="checkbox"/>${_t('i_accept_the_terms_and_conditions')}</div>
+                    </div>
+                    <div class="block">
+                        <div class="checkbox_line">
+                            <label>${_t('notify_this_porting_to')}</label>
+                            <input type="text" name="notifications.email.send_to" placeholder="${_t('mail_address')}" />
+                        </div>
+                    </div>
+                </div>
+                <!--
+                <div class="step_div fifth">
+                    <h1>What happens next?</h1>
+                    What happens next?<br/>
+                    <br/>
+                    1. We will verify all your information<br/>
+                    2. We will submit the request to your old provider<br/>
+                    3. They will authorize the release of your number and we will schedule a cut-over date<br/>
+                        OR<br/>
+                       They will deny the release of your number due to a problem, and we'll contact you to resolve the problem<br/>
+                    <br/>
+                    REMEMBER: The porting process varies by carrier and can take up to 30 days to complete. DO NOT CANCEL YOUR OLD SERVICE.<br/>
+                </div>
+                -->
+            </form>
+        </div>
+        <div class="wizard_buttons">
+            <button class="prev_step"/>
+            <button class="submit_btn btn success">${_t('submit')}</button>
+            <button class="next_step"/>
+        </div>
+    </div>
+</div>

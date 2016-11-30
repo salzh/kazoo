@@ -1,0 +1,1 @@
+var user={User:"sipuser",Pass:"yourpassword",Realm:"sip.sample.com",Display:"Gob Bleuth",WSServer:"wss://wss.sample.com:8443"};

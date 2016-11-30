@@ -1,0 +1,48 @@
+<div>
+    <div class="trunkstore_popup failover">
+        <div>
+            <div class="header ${radio}"></div>
+            <form id="failover" action="#">
+                <h2>${_t('choose_a_type_of_failover')}</h2>
+
+                <div class="radio_block">
+                    <div class="inline_field">
+                        {{if radio === 'number'}}
+                        <input type="radio" name="failover_type" value="number" CHECKED/>
+                        ${_t('alternative_number')}
+                        <input placeholder="+1 415-222-5555" type="text" name="raw_input" value="${failover}" class="text_field failover_number">
+                        {{else}}
+                        <input type="radio" name="failover_type" value="number"/>
+                        ${_t('alternative_number')}
+                        <input placeholder="+1 415-222-5555" type="text" name="raw_input" style="display: none;" class="text_field failover_number">
+                        {{/if}}
+                    </div>
+                    <div class="inline_field">
+                        {{if radio === 'sip'}}
+                        <input type="radio" name="failover_type" value="sip" CHECKED/>
+                        ${_t('failover_sip_address')}
+                        <input placeholder="sip:jon@doe.com" type="text" name="raw_input" value="${failover}" class="text_field failover_sip">
+                        {{else}}
+                        <input type="radio" name="failover_type" value="sip"/>
+                        ${_t('failover_sip_address')}
+                        <input placeholder="sip:jon@doe.com" type="text" name="raw_input" style="display: none;" class="text_field failover_sip">
+                        {{/if}}
+                    </div>
+                </div>
+
+                <div class="fancy_help border">
+                    <div class="wrapper_icon"><span class="note_icon"/></div>
+                    <div class="help_text">${_t('if_your_phone_system_is_unreachable')}</div>
+                    <div class="clear"/>
+                </div>
+
+                <div class="buttons">
+                    {{if radio}}
+                    <button class="btn danger remove_failover">${_t('remove')}</button>
+                    {{/if}}
+                    <button class="btn primary submit_btn">${_t('activate')}</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
