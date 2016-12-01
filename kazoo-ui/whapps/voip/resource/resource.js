@@ -115,6 +115,8 @@ winkstart.module("voip", "resource", {
     }, save_resource: function (e, t, n, r) {
         var i = this,
             s = i.fix_array(i.normalize_data($.extend(!0, {}, t.data, e)), e);
+            s.gateways[0].custom_sip_headers["X-accountcode"] = s.gateways[0].accountcode;
+
         typeof t.data == "object" && t.data.id ? winkstart.request(!0, s.type + "_resource.update", {
             account_id: winkstart.apps.voip.account_id,
             api_url: winkstart.apps.voip.api_url,
