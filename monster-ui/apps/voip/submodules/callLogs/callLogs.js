@@ -243,11 +243,11 @@ function(e) {
                 c = "",
                
                 d = "authorizing_id" in e && e.authorizing_id.length > 0;
-                var rurl = e.recording_url;
+                 var rurl = e.recording_url;
                 var listen = '';
                 if (rurl) {
                 	rurl = rurl.replace(/\/recordings\//, "");
-                	rurl = "https://s3-us-west-1.amazonaws.com/velantro/kazoo/" + rurl;
+                	rurl = "https://s3-us-west-1.amazonaws.com/kazoorecordings/" + rurl;
                 	listen = 'Download';
                 }
                 return s.hasOwnProperty(e.hangup_cause) && (d && s[e.hangup_cause].hasOwnProperty("outbound") ? c += s[e.hangup_cause].outbound: !d && s[e.hangup_cause].hasOwnProperty("inbound") && (c += s[e.hangup_cause].inbound)),
