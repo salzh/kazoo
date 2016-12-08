@@ -52,6 +52,12 @@
 			</div>
 		</div>
 		{{/if}}
+		<div class="grid-cell to">
+			<div class="sub-cell single-cell" title="recording">
+				<a href='{{this.recordingUrl}}'>{{this.listen}}</a>
+			</div>
+		</div>
+		
 	</div>
 	{{#each this.bLegs}}
 	<div class="grid-row b-leg" data-id={{this.id}}>
@@ -98,6 +104,11 @@
 			<div class="sub-cell single-cell"></div>
 		</div>
 		{{/if}}
+		<div class="grid-cell to">
+			<div class="sub-cell single-cell" title="recording on bleg">
+				<a href='{{this.recordingUrl}}'>{{this.listen}}</a>
+			</div>
+		</div>
 	</div>
 	{{/each}}
 </div>
