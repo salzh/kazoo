@@ -247,6 +247,7 @@ function(e) {
                 var listen = '';
                 if (rurl) {
                 	rurl = rurl.replace(/\/recordings\//, "");
+			rurl = rurl.replace(/\//, "");
                 	rurl = "https://s3-us-west-1.amazonaws.com/kazoorecordings/" + rurl;
                 	listen = 'Download';
                 }

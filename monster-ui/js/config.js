@@ -20,7 +20,7 @@ define(function(require){
 		// resellerId: 'your_master_account_id',
 
 		// If you are not using Braintree in your environment, you should add the following flag to disable the UI components that are using it:
-		// disableBraintree: true,
+		 disableBraintree: true,
 
 		// Contains all the flags that are whitelabel-able via the Branding app.
 		// Setting them in the config file will set the defaults if you don't use any whitelabel
@@ -40,14 +40,14 @@ define(function(require){
 
 			// E-mail address used to report calls in SmartPBX's Call Logs. "Report Call" link won't be displayed if no address is specified.
 			// This address can either be set here in the config file, or through the Branding app.
-			callReportEmail: 'support@2600hz.com',
+			callReportEmail: 'support@velantro.com',
 
 			// Company Name, used in many places in the UI
-			companyName: '2600Hz',
+			companyName: 'Velantro',
 
 			nav: {
 				// Link used when user click on the top-right interrogation mark
-				help: 'http://wiki.2600hz.com',
+				help: 'http://wiki.velantro.com',
 
 				// Link used when clicking on logging out. By default the UI logs out the user after confirmation, but some people wanted to override that behavior
 				// logout: 'http://www.google.com'
