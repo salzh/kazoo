@@ -43,7 +43,7 @@ while (defined($line = $file->read)) {
 	if ($line =~ / pull response content: (.+)$/) {
 	    my $json = $1;
 	    next unless $line =~ /dash_e911/;
-	    warn "[e911-json] $json\n";
+	    print "[e911-json] $json\n";
 
 	    %options = &Json2Hash($json);
 	    
@@ -51,7 +51,7 @@ while (defined($line = $file->read)) {
 	    $did = $options{data}{id}; $did =~ s/\D//g; $did =~ s/^1//g;
 	    next unless $did =~ /^1?\d{10}$/;
 			
-			warn "invalid: $json\n";
+			print "invalid: $json\n";
 	    $name = $options{data}{cnam}{display_name} || 'Velantro';
 	    $address =  $options{data}{dash_e911}{street_address};
 	    $city = $options{data}{dash_e911}{locality};
@@ -61,10 +61,10 @@ while (defined($line = $file->read)) {
 	    
 	    $url = "http://api.vitelity.net/api.php?login=$config{api_user}&pass=$config{api_pass}&cmd=e911send&did=$did&name=$name&address=$address&city=$city&state=$state&zip=$zip";
 	    
-	    warn "url: $url\n";
+	    print "url: $url\n";
 	    
 	    $res = get $url;
-	    warn "response: $res\n";			        
+	    print "response: $res\n";			        
 				
 	}
 }
